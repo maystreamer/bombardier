@@ -22,3 +22,15 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# mvn
+target/
+
+# Folder view configuration files
+.DS_Store
+
+# Avoid ignoring MVN wrapper jar file (.jar files are usually ignored)
+!maven-wrapper.jar
+
+# User-specific stuff:
+.idea/**
