@@ -1,0 +1,72 @@
+{
+  "api_context": {
+    "api_config": {
+      "base_url": "https://reqres.in/api",
+      "common_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      },
+      "auth_type": {
+        "name": "api_token",
+        "api_token": {
+          "key": "",
+          "value": ""
+        }
+      }
+    },
+    "api_scenarios": [
+      {
+        "scenario": "User_Life_Cycle",
+        "requests": [
+          {
+            "pause": 6,
+            "pause_type": "constant",
+            "name": "Create User",
+            "payload_type": "JsonString",
+            "api": {
+              "path": "/users",
+              "method": "POST",
+              "payload": "{\"name\":\"morpheus\",\"job\":\"leader\"}",
+              "status": 201
+            }
+          },
+          {
+            "pause": 5,
+            "pause_type": "exponential",
+            "name": "Get User",
+            "api": {
+              "path": "/users/2",
+              "method": "GET",
+              "status": 200
+            }
+          }
+        ]
+      },
+      {
+        "scenario": "List_Life_Cycle",
+        "requests": [
+          {
+            "pause": 6,
+            "pause_type": "constant",
+            "name": "Get Users By Page",
+            "api": {
+              "path": "/users?page=2",
+              "method": "GET",
+              "status": 200
+            }
+          },
+          {
+            "pause": 5,
+            "pause_type": "exponential",
+            "name": "Get Users With Delay",
+            "api": {
+              "path": "/users?delay=1",
+              "method": "GET",
+              "status": 200
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

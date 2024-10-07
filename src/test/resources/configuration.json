@@ -1,0 +1,30 @@
+{
+  "load_config": {
+    "pause_interval": 10,
+    "time_unit": "seconds",
+    "injection_profile": {
+      "test_type": "capacity/stress/soak",
+      "capacity": {
+        "description": "Learn how your application scales and monitor when your performances start to decrease and how",
+        "total_test_duration": 20,
+        "initial_user_arrival_rate": 3,
+        "final_user_arrival_rate": 6
+      },
+      "stress": {
+        "description": "Simulate a load peak to determine if your application crashes and recovers",
+        "total_test_duration": 30,
+        "total_injected_users": 5
+      },
+      "soak": {
+        "description": "Simulate your regular production use and monitor how your application behaves over time",
+        "total_test_duration": 5,
+        "constant_user_arrival_rate": 1
+      }
+    },
+    "acceptance_criteria": {
+      "percentile": 95.0,
+      "response_time_less_than": 0.2,
+      "success_ratio_percentage_higher_than": 95.0
+    }
+  }
+}
