@@ -4,7 +4,9 @@
 
 ## Description
 
-No-Code Performance Testing Powered by Gatling. You can run simulations for the Capacity, Smoke, and Soak Test. Configurations for specific simulations, acceptance criteria, and APIs to load test can be done [here](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/configuration.json).
+No-Code Performance Testing Powered by Gatling. You can run simulations for the Capacity, Smoke, and Soak Test. Configurations for specific simulations, acceptance criteria, and APIs to load test can be done at
+- [Load Test Configuration](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/configuration.json)
+- [APIs Configuration](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/apis/apis.json)
 
 Before we delve deeper, let’s briefly explore the concept of performance testing.
 
@@ -39,7 +41,7 @@ Make sure you have the following installed:
   
 ## Getting Started
 
-Follow these steps to get a copy of the project up and running on your local machine for development and testing purposes.  To update the load configurations and add your own APIs, you may make changes in the configuration file [here](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/configuration.json). For testing purposes, it is recommended to use the default load configurations.
+Follow these steps to get a copy of the project up and running on your local machine for development and testing purposes.  To update the load configurations and add your APIs, you may make changes in the configuration file [here](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/apis/apis.json). For testing purposes, it is recommended to use the default load configurations as set [here](https://github.com/maystreamer/bombardier/blob/main/src/test/resources/configuration.json).
 
 ```
 git clone https://github.com/maystreamer/bombardier.git
