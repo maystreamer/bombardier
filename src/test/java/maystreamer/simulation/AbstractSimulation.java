@@ -24,6 +24,8 @@ import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.http;
 import static io.gatling.javaapi.http.HttpDsl.status;
 
+//https://docs.gatling.io/reference/script/core/simulation/
+
 public abstract class AbstractSimulation extends Simulation {
     //protected JsonObject loadConfig = null;
     protected JsonObject injectionProfile = null;
@@ -51,9 +53,11 @@ public abstract class AbstractSimulation extends Simulation {
             json = Configuration.load(API_RESOURCE_NAME);
             final JsonObject apiContext = json.getAsJsonObject("api_context");
             this.httpProtocolBuilder = buildHttpProtocol(apiContext);
-            //this.scenarioBuilders = buildScenario(apiContext);
-            //this.chainBuilder = buildChain(apiContext);
             buildScenario(apiContext);
+            if(null == this.scenarioBuilder){
+                System.out.println("No scenario to run. Please add one in apis.json");
+                System.exit(1);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
